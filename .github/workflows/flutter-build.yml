@@ -16,6 +16,20 @@ on:
       minimal:
         type: boolean
         default: false
+  workflow_dispatch:
+    inputs:
+      upload-artifact:
+        description: "Subir artifacts y publicar release"
+        type: boolean
+        default: true
+      upload-tag:
+        description: "Tag para nombrar assets/release"
+        type: string
+        default: "nightly"
+      minimal:
+        description: "Solo Windows Flutter y Android"
+        type: boolean
+        default: true
 
 # NOTE: F-Droid builder script 'flutter/build_fdroid.sh' reads environment
 # variables from this workflow!
