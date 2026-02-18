@@ -2,6 +2,10 @@ name: Flutter Tag Build
 permissions:
   contents: write
   actions: read
+  id-token: write
+permissions:
+  contents: write
+  actions: read
 
 on:
   workflow_dispatch:
