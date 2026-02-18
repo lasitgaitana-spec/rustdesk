@@ -1,4 +1,8 @@
 name: Build the flutter version of the RustDesk
+permissions:
+  contents: write
+  actions: read
+  id-token: write
 
 on:
   workflow_call:
