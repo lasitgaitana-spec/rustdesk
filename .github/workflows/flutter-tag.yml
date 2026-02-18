@@ -14,7 +14,7 @@ on:
 
 jobs:
   run-flutter-tag-build:
-    uses: ./.github/workflows/flutter-build.yml
+    uses: lasitgaitana-spec/rustdesk/.github/workflows/flutter-build.yml@master
     secrets: inherit
     with:
       upload-artifact: true
