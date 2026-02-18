@@ -96,7 +96,7 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-          ref: ${{ env.TAG_NAME }}
+          ref: ${{ github.sha }}
 
       - name: Restore bridge files
         uses: actions/download-artifact@master
