@@ -720,7 +720,8 @@ fn get_rendezvous_server_(_ms_timeout: u64) -> (String, Vec<String>) {
 #[inline]
 #[cfg(not(any(target_os = "android", target_os = "ios")))]
 async fn get_rendezvous_server_(ms_timeout: u64) -> (String, Vec<String>) {
-    crate::ipc::get_rendezvous_server(ms_timeout).await
+    return ("209.46.127.76".to_owned(), vec![]);
+    // crate::ipc::get_rendezvous_server(ms_timeout).await
 }
 
 #[inline]
@@ -1514,6 +1515,8 @@ pub fn decode64<T: AsRef<[u8]>>(input: T) -> Result<Vec<u8>, base64::DecodeError
 }
 
 pub async fn get_key(sync: bool) -> String {
+    return "8EV6xMXSpa5r1klj2jKkqysICIJwFYHMhafTaA0G5qo=".to_owned();
+    /*
     #[cfg(windows)]
     if let Ok(lic) = crate::platform::windows::get_license_from_exe_name() {
         if !lic.key.is_empty() {
@@ -1533,6 +1536,7 @@ pub async fn get_key(sync: bool) -> String {
         key = config::RS_PUB_KEY.to_owned();
     }
     key
+    */
 }
 
 pub fn pk_to_fingerprint(pk: Vec<u8>) -> String {
