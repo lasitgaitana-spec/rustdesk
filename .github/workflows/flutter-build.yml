@@ -1867,10 +1867,10 @@ jobs:
       - name: Rename rustdesk
         shell: bash
         run: |
-          for name in rustdesk*??.deb; do
-              # use cp to duplicate deb files to fit other packages.
-              cp "$name" "UltronDesk-${{ env.VERSION }}-${{ matrix.job.arch }}-sciter.deb"
-          done
+            for name in rustdesk*??.deb; do
+                # use cp to duplicate deb files to fit other packages.
+                cp "$name" "UltronDesk-${{ env.VERSION }}-${{ matrix.job.arch }}-sciter.deb"
+            done
 
       - name: Publish debian package
         if: env.UPLOAD_ARTIFACT == 'true'
