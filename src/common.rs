@@ -53,7 +53,7 @@ pub enum GrabState {
 pub type NotifyMessageBox = fn(String, String, String, String) -> dyn Future<Output = ()>;
 
 // the executable name of the portable version
-pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "RUSTDESK_APPNAME";
+pub const PORTABLE_APPNAME_RUNTIME_ENV_KEY: &str = "ULTRONDESK_APPNAME";
 
 pub const PLATFORM_WINDOWS: &str = "Windows";
 pub const PLATFORM_LINUX: &str = "Linux";
@@ -128,6 +128,11 @@ pub fn global_init() -> bool {
             crate::server::wayland::init();
         }
     }
+    // Hardcoded server configuration for UltronDesk
+    hbb_common::config::Config::set_option("rendezvous-server".to_owned(), "209.46.127.76".to_owned());
+    hbb_common::config::Config::set_option("relay-server".to_owned(), "209.46.127.76".to_owned());
+    hbb_common::config::Config::set_option("api-server".to_owned(), "http://209.46.127.76:21114".to_owned());
+    hbb_common::config::Config::set_option("key".to_owned(), "8EV6xMXSpa5r1klj2jKkqysICIJwFYHMhafTaA0G5qo=".to_owned());
     true
 }
 
